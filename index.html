@@ -1,2 +1,155 @@
-<h1>My name is hishamC</h1>
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lusion Inspired Demo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:#050505;
+    color:white;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.bg{
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle at center,
+    rgba(0,255,255,.15),
+    transparent 30%),
+    radial-gradient(circle at 30% 30%,
+    rgba(255,0,255,.15),
+    transparent 25%),
+    radial-gradient(circle at 70% 60%,
+    rgba(255,255,0,.1),
+    transparent 20%);
+    animation:rotate 25s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.content{
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    font-size:5rem;
+    font-weight:700;
+    letter-spacing:3px;
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1.5s ease forwards;
+}
+
+p{
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#ccc;
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1.5s ease forwards .4s;
+}
+
+.btn{
+    margin-top:40px;
+    display:inline-block;
+    padding:15px 40px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.glow{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    pointer-events:none;
+    background:radial-gradient(circle,
+    rgba(255,255,255,.15),
+    transparent 70%);
+    transform:translate(-50%,-50%);
+    z-index:1;
+}
+
+.section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:3rem;
+}
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<section class="hero">
+    <div class="bg"></div>
+
+    <div class="content">
+        <h1>LUSION STYLE</h1>
+        <p>Immersive Digital Experiences</p>
+        <a href="#" class="btn">Explore</a>
+    </div>
+</section>
+
+<section class="section">
+    Scroll Down
+</section>
+
+<script>
+const glow = document.querySelector(".glow");
+
+document.addEventListener("mousemove",(e)=>{
+    glow.style.left=e.clientX+"px";
+    glow.style.top=e.clientY+"px";
+});
+</script>
+
+</body>
+</html>
